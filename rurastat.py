@@ -31,7 +31,7 @@ def getFilesfromDir(directorypath):
 def inputWordHashlist(inputfile):
     words_in=[]
     hasher = hashlib.md5()
-    for wordInput in open(inputfile,encoding='unicode_escape'):
+    for wordInput in open(inputfile,encoding='unicode_escape', errors='replace'):
        words_in.append(wordInput.rstrip())
 
 
@@ -40,7 +40,7 @@ def inputWordHashlist(inputfile):
 def returnHitCount(inputwords,wordlistfile):
     hitcount = 0
 
-    for candidates in open(wordlistfile,encoding='unicode_escape'):
+    for candidates in open(wordlistfile,encoding='unicode_escape', errors='replace'):
        if candidates.rstrip() in inputwords: hitcount+=1
 
     return hitcount
