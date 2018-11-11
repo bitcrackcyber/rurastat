@@ -67,8 +67,9 @@ def main():
     print ("[+] OK, Loaded "+str(len(inputCandidates)) + " cracked passwords / 'Founds' to check.")
     try:
         fileList = getFilesfromDir(args.filedir)
-    except:
+    except IOError as error:
         print("[-] Error while getting directory listing of your wordlists")
+        print (error)
         sys.exit(-1)
 
     print ("[+] OK, loaded "+str(len(fileList))+" wordlist files to look for 'Founds'.")
