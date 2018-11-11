@@ -83,7 +83,7 @@ def main():
         print ("Wordlist: "+keys+" | Number of 'Founds' in this file: "+str(values))
 
     print ("-------------------------------------------------------------------------------")
-    if args.plot_graph:
+    if plotly_enabled and args.plot_graph:
             print ("[+] You have enabled Plotly and chose to output to Plotly graph. Press a key to output now...")
             xx = []
             yy= []
