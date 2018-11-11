@@ -39,9 +39,13 @@ def inputWordHashlist(inputfile):
 
 def returnHitCount(inputwords,wordlistfile):
     hitcount = 0
+    dupcheck = []
 
     for candidates in open(wordlistfile,encoding='unicode_escape', errors='replace'):
-       if candidates.rstrip() in inputwords: hitcount+=1
+        if candidates.rstrip() not in dupcheck:
+            if candidates.rstrip() in inputwords:
+                hitcount+=1
+                dupcheck.append(candidates.rstrip())
 
     return hitcount
 
